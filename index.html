@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="file.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>SIGNUP PAGE</title>
+  </head>
+  <body>
+    <div class="container">
+      <form name="myform">
+        <div class="gender">
+          <input type="radio" value="None" id="male" name="gender" checked />
+          <label for="male" class="radio" chec
+            ><i class="fa fa-mars"></i> Male</label
+          >
+
+          <input type="radio" value="None" id="female" name="gender" />
+          <label for="female" class="radio"
+            ><i class="fa fa-venus"></i> Female</label
+          >
+
+          <input type="radio" value="None" id="others" name="gender" />
+          <label for="others" class="radio"
+            ><i class="fa fa-venus-mars"></i> Other</label
+          >
+        </div>
+
+        <label for="user"><b>USERNAME</b></label>
+        <input type="text" placeholder="Create username" name="user" required />
+
+        <label for="phone"><b>MOBILE NUMBER</b></label>
+        <input
+          type="text"
+          onblur="phonenumber(document.myform.phone)"
+          placeholder="10 digit mobile number"
+          name="phone"
+          required
+        />
+        <p
+          id="mobileError"
+          style="
+            display: none;
+            font-size: 13px;
+            color: red;
+            margin-bottom: 12px;
+          "
+        >
+          *Should contain 10 digits from 0-9
+        </p>
+        <label for="password"><b>PASSWORD</b></label>
+        <input
+          type="password"
+          onblur="passwordCheck(document.myform.password)"
+          placeholder="Create password (min 8 characters)"
+          name="password"
+          required
+        />
+        <p
+          id="phoneError"
+          style="
+            display: none;
+            font-size: 13px;
+            color: red;
+            margin-bottom: 12px;
+          "
+        >
+          *Password should be atleast 8 characters
+        </p>
+
+        <button type="submit" class="signup"><b>SIGNUP</b></button>
+      </form>
+      <p class="text">
+        Register Now <br />
+        and avail <br />amazing benefits!!
+      </p>
+    </div>
+    <script>
+      function phonenumber(inputtxt) {
+        var phoneno = /^\d{10}$/;
+        if (inputtxt.value.match(phoneno)) {
+          document.getElementById("mobileError").style.display = "none";
+          return true;
+        } else {
+          document.getElementsByName("phone")[0].value = "";
+          document.getElementById("mobileError").style.display = "block";
+          return false;
+        }
+      }
+      function passwordCheck(pass) {
+        if (pass.value.length < 8) {
+          document.getElementById("phoneError").style.display = "block";
+          document.getElementsByName("password")[0].value = "";
+        } else {
+          document.getElementById("phoneError").style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

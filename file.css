@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #0dd3aa;
+  background: linear-gradient(120deg, #0dd3aa 55%, #fff 55%);
+  height: 500px;
+}
+.text {
+  padding-top: 90px;
+  text-align: right;
+  font-size: 58px;
+  font-family: "Carter One";
+}
+form {
+  background-color: #fff;
+  margin-top: 90px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 18px;
+}
+.gender {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 14px;
+  margin-bottom: 15px;
+}
+input:not(input[type="radio"]) {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 6px 0;
+  display: block;
+  border: 1px solid #ccc;
+}
+input[type="radio"] {
+  display: none;
+}
+label {
+  font-family: "PT Sans Narrow", sans-serif;
+}
+label.radio {
+  cursor: pointer;
+  overflow: visible;
+  display: inline-block;
+  position: relative;
+  padding: 13px;
+}
+
+label.radio::before {
+  background: #0dd3aa;
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: -12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+label.radio:after {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  width: 0.5em;
+  height: 0.25em;
+  background: transparent;
+  left: -8px;
+  top: 18px;
+  border: 3px solid #fff;
+  border-top: none;
+  border-right: none;
+
+  transform: rotate(-45deg);
+}
+input[type="radio"]:checked + label:after {
+  opacity: 1;
+}
+button {
+  border-radius: 5px;
+  background-color: #0dd3aa;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+.signup {
+  font-size: 18px;
+  transition: all 0.1s linear 0s;
+  top: 0px;
+  position: relative;
+  box-shadow: 0 3px #55e7ca;
+}
+.signup:hover {
+  color: #ffffff;
+  background-color: #099075;
+  border-color: #ffffff;
+  top: 3px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
